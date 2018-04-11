@@ -36,6 +36,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\ApiCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\ApiDatatypes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\BroadcastReceiver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IFConnect\IFConnectorClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IFConnect\Serializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -46,5 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)IFConnect\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)IFConnect\packages.config" />
   </ItemGroup>
 </Project>
