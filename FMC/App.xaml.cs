@@ -11,7 +11,7 @@ namespace FMC
 
         public App()
         {
-            InitializeComponent();
+            
 
             if (UseMockDataStore)
                 DependencyService.Register<MockDataStore>();
