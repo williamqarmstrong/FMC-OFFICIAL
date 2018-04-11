@@ -38,6 +38,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\BroadcastReceiver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\IFConnectorClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\Serializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)datatypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
