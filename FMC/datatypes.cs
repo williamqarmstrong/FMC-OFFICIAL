@@ -31,7 +31,7 @@ namespace Fds.IFAPI
         [DataMember]
         public ATCMessage[] ATCMessages { get; set; }
     }
-    
+
     [DataContract]
     public class APIWaypoint
     {
@@ -146,7 +146,7 @@ namespace Fds.IFAPI
             Type = this.GetType().ToString();
         }
     }
-    
+
     [DataContract]
     public class FacilityList : APIResponse
     {
@@ -174,7 +174,7 @@ namespace Fds.IFAPI
         [DataMember]
         public DateTime StartTimeUTC { get; set; }
     }
-    
+
     [DataContract]
     public class AirplaneInfo
     {
@@ -361,3 +361,4 @@ namespace Fds.IFAPI
         [DataMember]
         public float WeightPercentage { get; set; }
     }
+}
