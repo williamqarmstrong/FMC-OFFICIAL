@@ -39,6 +39,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\IFConnectorClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFConnect\Serializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Connect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VNAV.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
