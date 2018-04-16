@@ -53,5 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)IFConnect\packages.config" />
+    <None Include="$(MSBuildThisFileDirectory)fixes.json" />
   </ItemGroup>
 </Project>
