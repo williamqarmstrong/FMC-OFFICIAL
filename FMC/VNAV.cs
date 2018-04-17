@@ -23,25 +23,44 @@ namespace FMC
         }
     }
 
-    public class getVS (vfpl, i, cfpllat, cfpllong) {
+    public class getVS (vfpl, i, cfpllat, cfpllong, gs) {
 
 
         //initializes the next waypoint
         int j = i++;
 
         //gets the coordinates of the waypoints
-        float origincoordlat = cfpllat[i];
-        float goalcoordlat = cfpllat[j];
+        double origincoordlat = cfpllat[i];
+        double goalcoordlat = cfpllat[j];
 
-        float origincoordlong = cfpllong[i];
-        float goalcoordlong = cfpllat[j];
+        double origincoordlong = cfpllong[i];
+        double goalcoordlong = cfpllat[j];
 
+
+        //adds the altitudes
+        int goalAlt = vfpl[j];
+        int initAlt = vfpl[i];
+        int altChange = initAlt - goalAlt;
 
         //does some f***in complicated coordinate math
         //then the developer remembered there was a class for this
         //and he didn't know how to use it
         //but he will finish it tmrw
+        int gsmph = gs * 1.15078;
 
+        var originCoord = new GeoCoordinate(origincoordlat, origincoordlong);
+        var goalCoord = new GeoCoordinate(goalcoordlat, goalcoordlong);
+
+        distancem = sCoord.GetDistanceTo(eCoord);
+        //distance comes out in meters
+
+        distance = distancem * 3.28084;
+
+        dsscale = distance / gsmph;
+        dsscale = dsscale/60;
+
+        vertSpeed = altChange / dsscale;
+        return vertSpeed;
 
     }
 }
