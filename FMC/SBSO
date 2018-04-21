@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-
+//this program provides simbrief integration
 namespace SBDataTest
 {
     class SBSO
