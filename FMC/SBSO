@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Linq;
+
+
+namespace SBDataTest
+{
+    class SBSO
+    {
+        const string FILENAME = @//"file directory goes here";
+        static void Main(string[] args)
+        {
+            new Navlog(FILENAME);
+        }
+    }
+    public class Navlog
+    {
+        public static List<Navlog> logs { get; set; }
+
+        public string ident { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+        public string stage { get; set; }
+        public string airway { get; set; }
+        public string star { get; set; }
+        public int distance { get; set; }
+        public int altitude { get; set; }
+        public int ind_airspeed { get; set; }
+        public decimal mach { get; set; }
+
+        public Navlog() { }
+        public Navlog(string FILENAME)
+        {
+            XDocument doc = XDocument.Load(FILENAME);
+
+            Navlog.logs = doc.Descendants("fix").Select(x => new Navlog()
+            {
+                ident = (string)x.Element("ident"),
+                name = (string)x.Element("name"),
+                type = (string)x.Element("type"),
+                latitude = (double)x.Element("pos_lat"),
+                longitude = (double)x.Element("pos_long"),
+                stage = (string)x.Element("stage"),
+                airway = (string)x.Element("via_airway"),
+                star = (string)x.Element("is_std_star"),
+                distance = (int)x.Element("distance"),
+                altitude = (int)x.Element("altitude_feet"),
+                ind_airspeed = (int)x.Element("ind_airspeed"),
+                mach = (decimal)x.Element("mach")
+
+            }).ToList();
+        }
+
+    }
+}
