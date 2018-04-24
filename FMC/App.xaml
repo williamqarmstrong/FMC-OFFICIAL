@@ -1,28 +1,35 @@
-<?xml version="1.0" encoding="utf-8" ?>  
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
-             x:Class="Data_Entry.MainPage">  
-  <ContentPage.Content>  
-    <StackLayout Padding="20">  
-      <Label Text="Create account" TextColor="White" FontSize="20"></Label>  
-      <Entry x:Name="FirstName" Placeholder="First Name" WidthRequest="150"></Entry>  
-      <Entry x:Name="MiddleName" Placeholder="Middle Name" WidthRequest="150"></Entry>  
-      <Entry x:Name="LastName" Placeholder="Last Name" WidthRequest="150"></Entry>  
-  
-      <StackLayout Orientation="Horizontal">  
-        <Label Text="Date of Birth" FontSize="25" TextColor="White" VerticalOptions="End"/>  
-        <DatePicker x:Name="Date"/>  
-      </StackLayout>  
-  
-      <StackLayout>  
-        <Label Text="Time to start" VerticalOptions="End" FontSize="25" TextColor="White"/>  
-        <TimePicker x:Name="Time" />  
-      </StackLayout>  
-  
-      <StackLayout Orientation="Horizontal">  
-        <Button BackgroundColor="Gray" TextColor="White" Text="Save" Clicked="OnSave"/>  
-        <Button BackgroundColor="Maroon" TextColor="White" Text="View" Clicked="OnView"/>  
-      </StackLayout>  
-    </StackLayout>  
-  </ContentPage.Content>  
-</ContentPage>  
+<!--
+//
+//  MainWindow.xaml
+//  LiveFlight Connect
+//
+//  Copyright © 2016 Cameron Carmichael Alonso. All rights reserved.
+//
+//  Licensed under GPL-V3.
+//  https://github.com/LiveFlightApp/Connect-Windows/blob/master/LICENSE
+//
+ -->
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Indicators="clr-namespace:Indicators;assembly=Indicators" xmlns:IF_FMS="clr-namespace:IF_FMS;assembly=IF_FMS" xmlns:FlightPlanDatabase="clr-namespace:FlightPlanDatabase;assembly=FlightPlanDatabase" xmlns:local="clr-namespace:LiveFlight" mc:Ignorable="d" x:Name="LiveFlight_Connect" x:Class="LiveFlight.MainWindow"
+        Title="LiveFlight Connect" Height="545.333" Width="525" Loaded="PageLoaded"  ResizeMode="NoResize" Icon="LiveFlight.ico" KeyDown="keyDownEvent" KeyUp="keyUpEvent">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="428"/>
+        </Grid.ColumnDefinitions>
+       
+        
+
+        <Grid x:Name="overlayGrid" Grid.ColumnSpan="4" d:IsHidden="True">
+            <Rectangle Fill="#E0000000"/>
+            <TextBlock Text="Connecting to Infinite Flight..." Foreground="White" HorizontalAlignment="Center" Height="50" FontSize="16"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="36,269,10,0" TextAlignment="Center" TextWrapping="Wrap" Text="Make sure the device running Infinite Flight is on the same WiFi network and has &quot;Infinite Flight Connect&quot;enabled in settings." VerticalAlignment="Top" Foreground="White"/>
+        </Grid>
+
+    </Grid>
+</Window>
