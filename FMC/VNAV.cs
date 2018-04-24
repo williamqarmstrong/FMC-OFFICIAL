@@ -1,4 +1,6 @@
-﻿using Fds.IFAPI;
+﻿/*
+
+using Fds.IFAPI;
 using System;
 using System.Device.Location.GeoCoordinate;
 
@@ -12,7 +14,7 @@ namespace FMC
         }
     }
 
-    public class waypointConfirm (fpl[], i){
+    public class waypointConfirm (fpl[], i) {
 
 
         //imports waypoints from IF
@@ -64,3 +66,5 @@ namespace FMC
 
     }
 }
+
+*/
